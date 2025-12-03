@@ -22,17 +22,39 @@ function mod(n, m) {
     return ((n % m) + m) % m;
 }
 
+// for (let i = 0; i < moves.length; i++) {
+
+//     if (moves[i].direction === 'L') {
+//         point = mod(point - moves[i].steps, end);
+
+//     } else if (moves[i].direction === 'R') {
+//         point = mod(point + moves[i].steps, end);
+//     }
+
+//     if (point == 0) {
+//         answer.push(point);
+//     }
+// };
+// console.log(answer.length)
+
+// Part 2 
+
 for (let i = 0; i < moves.length; i++) {
 
-    if (moves[i].direction === 'L') {
-        point = mod(point - moves[i].steps, end);
+    for (let j = 0; j < moves[i].steps; j++) {
+        if (moves[i].direction === 'L') {
+            point -= 1;
+        } else {
+            point += 1;
+        }
 
-    } else if (moves[i].direction === 'R') {
-        point = mod(point + moves[i].steps, end);
-    }
-
-    if (point == 0) {
-        answer.push(point);
+        point = mod(point, end);
+        if (point == 0) {
+            answer.push(point);
+        }
     }
 };
-console.log(answer.length)
+
+console.log(answer.length);
+
+
