@@ -22,20 +22,20 @@ function mod(n, m) {
     return ((n % m) + m) % m;
 }
 
-// for (let i = 0; i < moves.length; i++) {
+for (let i = 0; i < moves.length; i++) {
 
-//     if (moves[i].direction === 'L') {
-//         point = mod(point - moves[i].steps, end);
+    if (moves[i].direction === 'L') {
+        point = mod(point - moves[i].steps, end);
 
-//     } else if (moves[i].direction === 'R') {
-//         point = mod(point + moves[i].steps, end);
-//     }
+    } else if (moves[i].direction === 'R') {
+        point = mod(point + moves[i].steps, end);
+    }
 
-//     if (point == 0) {
-//         answer.push(point);
-//     }
-// };
-// console.log(answer.length)
+    if (point == 0) {
+        answer.push(point);
+    }
+};
+console.log(answer.length)
 
 // Part 2 
 
